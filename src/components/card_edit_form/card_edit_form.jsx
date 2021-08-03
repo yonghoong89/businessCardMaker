@@ -21,22 +21,20 @@ const CardEditForm = ({ card, updateCard, deleteCard}) => {
     fileName,
     fileURL,
   } = card;
-  const onSubmit = () => {
-
+  const onSubmit = (event) => {
+    deleteCard(card)
   };
 
   const onChange = (event) =>{
-    
     if(event.currentTarget == null){
       return;
     }
     event.preventDefault();
-    console.log(event.currentTarget)
     updateCard({
       ...card,
       [event.currentTarget.name]:event.currentTarget.value,
-    })
-  }
+    });
+  };
   return (
     <form className={styles.form}>
       <input ref={nameRef} className={styles.input} type="text" name="name" value={name} onChange={onChange} />

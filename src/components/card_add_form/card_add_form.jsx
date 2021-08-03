@@ -16,7 +16,6 @@ const CardAddForm = ({onAdd}) => {
   const messageRef =useRef();
 
   const onSubmit = (event) => {
-    console.log('test')
     event.preventDefault();
     const card ={
       id:Date.now(),

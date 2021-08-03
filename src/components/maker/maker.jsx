@@ -7,41 +7,41 @@ import Preview from '../preview/preview';
 import styles from './maker.module.css';
 
 const Maker = ({ authService }) => {
-  const [cards,setCards] = useState([
-    {
-      id:'1',
-      name:'yonghoon',
-      company:'google',
-      theme:'light',
-      title:'sorftWare',
-      email:'yonghoong89@naver.com',
-      message:'go for it',
-      fileName:'yong',
-      fileUrl:'yong.png'
-    },
-    {
-      id:'2',
-      name:'yonghoon',
-      company:'google',
-      theme:'light',
-      title:'sorftWare',
-      email:'yonghoong89@naver.com',
-      message:'go for it',
-      fileName:'yong',
-      fileUrl:'yong.png'
-    },
-    {
-      id:'3',
-      name:'yonghoon',
-      company:'google',
-      theme:'light',
-      title:'sorftWare',
-      email:'yonghoong89@naver.com',
-      message:'go for it',
-      fileName:'yong',
-      fileUrl:'yong.png'
-    }
-  ])
+  const [cards, setCards] = useState({
+      1 : {
+        id:'1',
+        name:'yonghoon',
+        company:'google',
+        theme:'light',
+        title:'sorftWare',
+        email:'yonghoong89@naver.com',
+        message:'go for it',
+        fileName:'yong',
+        fileUrl:'yong.png'
+      },
+      2 : {
+        id:'2',
+        name:'yonghoon',
+        company:'google',
+        theme:'light',
+        title:'sorftWare',
+        email:'yonghoong89@naver.com',
+        message:'go for it',
+        fileName:'yong',
+        fileUrl:'yong.png'
+      },
+      3 : {
+        id:'3',
+        name:'yonghoon',
+        company:'google',
+        theme:'light',
+        title:'sorftWare',
+        email:'yonghoong89@naver.com',
+        message:'go for it',
+        fileName:'yong',
+        fileUrl:'yong.png'
+      },
+  })
   const history = useHistory();
   const onLogout = () => {
     authService.logout();
@@ -49,23 +49,32 @@ const Maker = ({ authService }) => {
 
   useEffect(() => {
     authService.onAuthChange(user => {
-      if (!user) {
-        history.push('/');
-      }
+      // if (!user) {
+      //   history.push('/');
+      // }
     });
   });
 
   const addCard = (card) =>{
-    const updated = [...cards, card];
+    const updated = {...cards, card};
     setCards(updated)
   }
 
+  //addCard에도 적용가능
   const updateCard = (card) =>{
-    console.log(card)
+    setCards(cards => {
+      const updated = {...cards};
+      updated[card.id] = card;
+      return updated;
+    });
   }
 
   const deleteCard = (card) =>{
-    console.log(card)
+    setCards(cards => {
+      const updated = {...cards};
+      delete updated[card.id]
+      return updated;
+    });
   }
 
   return (
