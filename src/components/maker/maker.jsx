@@ -16,19 +16,19 @@ const Maker = ({ FileInput, authService }) => {
         title:'sorftWare',
         email:'yonghoong89@naver.com',
         message:'go for it',
-        fileName:'yong',
-        fileUrl:'yong.png'
+        fileName:'',
+        fileURl:null
       },
       2 : {
         id:'2',
         name:'yonghoon',
         company:'google',
-        theme:'light',
+        theme:'dark',
         title:'sorftWare',
         email:'yonghoong89@naver.com',
         message:'go for it',
-        fileName:'yong',
-        fileUrl:'yong.png'
+        fileName:'',
+        fileURl:null
       },
       3 : {
         id:'3',
@@ -38,8 +38,8 @@ const Maker = ({ FileInput, authService }) => {
         title:'sorftWare',
         email:'yonghoong89@naver.com',
         message:'go for it',
-        fileName:'yong',
-        fileUrl:'yong.png'
+        fileName:'',
+        fileURl:null
       },
   })
   const history = useHistory();
@@ -58,6 +58,7 @@ const Maker = ({ FileInput, authService }) => {
   const addCard = (card) =>{
     const updated = {...cards, card};
     setCards(updated)
+    console.log(cards)
   }
 
   //addCard에도 적용가능
@@ -67,6 +68,7 @@ const Maker = ({ FileInput, authService }) => {
       updated[card.id] = card;
       return updated;
     });
+    console.log(cards)
   }
 
   const deleteCard = (card) =>{
@@ -81,7 +83,7 @@ const Maker = ({ FileInput, authService }) => {
     <section className={styles.maker}>
       <Header onLogout={onLogout} />
       <div className={styles.container}>
-        <Editor FileInput={FileInput} cards={cards} addCard={addCard} updateCard={updateCard} deleteCard={deleteCard} />
+        <Editor FileInput={FileInput} cards={cards} addCard={updateCard} updateCard={updateCard} deleteCard={deleteCard} />
         <Preview cards={cards} />
       </div>
       <Footer />
