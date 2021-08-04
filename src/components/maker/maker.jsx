@@ -6,50 +6,23 @@ import Editor from '../editor/editor';
 import Preview from '../preview/preview';
 import styles from './maker.module.css';
 
-const Maker = ({ FileInput, authService }) => {
-  const [cards, setCards] = useState({
-      1 : {
-        id:'1',
-        name:'yonghoon',
-        company:'google',
-        theme:'light',
-        title:'sorftWare',
-        email:'yonghoong89@naver.com',
-        message:'go for it',
-        fileName:'',
-        fileURl:null
-      },
-      2 : {
-        id:'2',
-        name:'yonghoon',
-        company:'google',
-        theme:'dark',
-        title:'sorftWare',
-        email:'yonghoong89@naver.com',
-        message:'go for it',
-        fileName:'',
-        fileURl:null
-      },
-      3 : {
-        id:'3',
-        name:'yonghoon',
-        company:'google',
-        theme:'light',
-        title:'sorftWare',
-        email:'yonghoong89@naver.com',
-        message:'go for it',
-        fileName:'',
-        fileURl:null
-      },
-  })
+const Maker = ({ FileInput, authService, cardRepository }) => {
+  const [cards, setCards] = useState({})
   const history = useHistory();
+  const historyState = history.location.state;
+  const [userId, setUserId] = useState(historyState && historyState.id || 'test');
+
   const onLogout = () => {
     authService.logout();
   };
 
   useEffect(() => {
     authService.onAuthChange(user => {
-      // if (!user) {
+      if (user) {
+        console.log(user.uid)
+        setUserId(user.uid)
+      }
+      // else{
       //   history.push('/');
       // }
     });
@@ -58,7 +31,6 @@ const Maker = ({ FileInput, authService }) => {
   const addCard = (card) =>{
     const updated = {...cards, card};
     setCards(updated)
-    console.log(cards)
   }
 
   //addCard에도 적용가능
@@ -68,7 +40,8 @@ const Maker = ({ FileInput, authService }) => {
       updated[card.id] = card;
       return updated;
     });
-    console.log(cards)
+    console.log(userId,card)
+    cardRepository.saveCard(userId, card)
   }
 
   const deleteCard = (card) =>{
@@ -77,6 +50,7 @@ const Maker = ({ FileInput, authService }) => {
       delete updated[card.id]
       return updated;
     });
+    cardRepository.removeCard(userId, card)
   }
 
   return (
