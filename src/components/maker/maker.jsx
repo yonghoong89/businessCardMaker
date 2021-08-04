@@ -10,7 +10,7 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
   const [cards, setCards] = useState({})
   const history = useHistory();
   const historyState = history.location.state;
-  const [userId, setUserId] = useState(historyState && historyState.id || 'test');
+  const [userId, setUserId] = useState(historyState && historyState.id);
 
   const onLogout = () => {
     authService.logout();
@@ -24,24 +24,23 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
       setCards(cards);
     });
     return () => stopSync() ;
-  }, [userId]);
+  }, [userId, cardRepository]);
 
   useEffect(() => {
     authService.onAuthChange(user => {
       if (user) {
-        console.log(user.uid)
         setUserId(user.uid)
       }
       // else{
       //   history.push('/');
       // }
     });
-  });
+  },[authService, userId, history]);
 
-  const addCard = (card) =>{
-    const updated = {...cards, card};
-    setCards(updated)
-  }
+  // const addCard = (card) =>{
+  //   const updated = {...cards, card};
+  //   setCards(updated)
+  // }
 
   //addCard에도 적용가능
   const updateCard = (card) =>{
@@ -50,7 +49,6 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
       updated[card.id] = card;
       return updated;
     });
-    console.log(userId,card)
     cardRepository.saveCard(userId, card)
   }
 
