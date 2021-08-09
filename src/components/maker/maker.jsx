@@ -30,10 +30,9 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
     authService.onAuthChange(user => {
       if (user) {
         setUserId(user.uid)
+      }else{
+        history.push('/');
       }
-      // else{
-      //   history.push('/');
-      // }
     });
   },[authService, userId, history]);
 
