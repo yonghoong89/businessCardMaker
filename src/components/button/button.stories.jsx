@@ -3,12 +3,17 @@ import Button from './button';
 
 export default {
   component: Button,
-  title: '버튼',
+  title: 'Button',
 };
 
 const Template = args => <Button {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {
-  buttonName: '디폴트 버튼이름'
+export const Delete = Template.bind({});
+Delete.args = {
+  name: 'Delete'
+};
+
+export const Add = Template.bind({});
+Add.args = {
+  name: 'Add'
 };

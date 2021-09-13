@@ -5,6 +5,7 @@ import Header from '../header/header';
 import styles from './login.module.css';
 
 const Login = ({ authService }) => {
+  console.log(authService)
   const history = useHistory();
   const goToMaker = userId => {
     history.push({

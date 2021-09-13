@@ -1,4 +1,5 @@
-import '../src/components/button/button.module.css';
+import '../src/app.module.css';
+
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
