@@ -1,27 +1,20 @@
 {
   "files": {
-    "0.e2b05afd.iframe.bundle.js": "./0.e2b05afd.iframe.bundle.js",
-    "main.css": "./static/css/main.0dda991f.chunk.css",
-    "main.js": "./main.40466527.iframe.bundle.js",
-    "main.css.map": "./static/css/main.0dda991f.chunk.css.map",
-    "runtime~main.js": "./runtime~main.ffafd6ea.iframe.bundle.js",
-    "vendors~main.js": "./vendors~main.38252c21.iframe.bundle.js",
-    "vendors~main.js.map": "./vendors~main.38252c21.iframe.bundle.js.map",
-    "4.296170fe.iframe.bundle.js": "./4.296170fe.iframe.bundle.js",
-    "4.296170fe.iframe.bundle.js.map": "./4.296170fe.iframe.bundle.js.map",
-    "5.15664604.iframe.bundle.js": "./5.15664604.iframe.bundle.js",
-    "6.15479729.iframe.bundle.js": "./6.15479729.iframe.bundle.js",
-    "6.15479729.iframe.bundle.js.map": "./6.15479729.iframe.bundle.js.map",
-    "7.6c86b187.iframe.bundle.js": "./7.6c86b187.iframe.bundle.js",
-    "4.296170fe.iframe.bundle.js.LICENSE.txt": "./4.296170fe.iframe.bundle.js.LICENSE.txt",
-    "6.15479729.iframe.bundle.js.LICENSE.txt": "./6.15479729.iframe.bundle.js.LICENSE.txt",
-    "iframe.html": "./iframe.html",
-    "vendors~main.38252c21.iframe.bundle.js.LICENSE.txt": "./vendors~main.38252c21.iframe.bundle.js.LICENSE.txt"
+    "main.css": "/businessCardMaker/static/css/main.4f6bfd04.chunk.css",
+    "main.js": "/businessCardMaker/static/js/main.2ad572e8.chunk.js",
+    "main.js.map": "/businessCardMaker/static/js/main.2ad572e8.chunk.js.map",
+    "runtime-main.js": "/businessCardMaker/static/js/runtime-main.8c64a646.js",
+    "runtime-main.js.map": "/businessCardMaker/static/js/runtime-main.8c64a646.js.map",
+    "static/js/2.4ed2e9b6.chunk.js": "/businessCardMaker/static/js/2.4ed2e9b6.chunk.js",
+    "static/js/2.4ed2e9b6.chunk.js.map": "/businessCardMaker/static/js/2.4ed2e9b6.chunk.js.map",
+    "index.html": "/businessCardMaker/index.html",
+    "static/css/main.4f6bfd04.chunk.css.map": "/businessCardMaker/static/css/main.4f6bfd04.chunk.css.map",
+    "static/js/2.4ed2e9b6.chunk.js.LICENSE.txt": "/businessCardMaker/static/js/2.4ed2e9b6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "runtime~main.ffafd6ea.iframe.bundle.js",
-    "vendors~main.38252c21.iframe.bundle.js",
-    "static/css/main.0dda991f.chunk.css",
-    "main.40466527.iframe.bundle.js"
+    "static/js/runtime-main.8c64a646.js",
+    "static/js/2.4ed2e9b6.chunk.js",
+    "static/css/main.4f6bfd04.chunk.css",
+    "static/js/main.2ad572e8.chunk.js"
   ]
 }
